@@ -1,0 +1,16 @@
+@import 'reset.css';
+@import './home.scss';
+
+html {
+  overflow-x: hidden;
+  font-family: Microsoft YaHei;
+}
+
+body {
+  color: #000;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+}

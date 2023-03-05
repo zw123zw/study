@@ -1,0 +1,21 @@
+.home {
+  .home-name {
+    color: #08f615;
+    margin: 10px 0;
+  }
+}
+
+.tran {
+  display: flex;
+  animation: tetstran 1s ease-in forwards;
+}
+
+@keyframes tetstran {
+  0% {
+    transform: translateX(0) rotate(0);
+  }
+
+  100% {
+    transform: translateX(100px) rotate(-45deg);
+  }
+}
