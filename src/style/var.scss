@@ -1,0 +1,76 @@
+// Color
+$--color-white: #ffffff !default;
+$--color-black: #000000 !default;
+$--color-primary: #1966ff !default;
+$--color-regular: #ff6633 !default;
+$--color-secondary: #ff4d4d !default;
+$--color-orange: #ff9933 !default;
+$--color-green: #12b362 !default;
+$--color-gray: #333333 !default;
+$--color-dark: #292c33 !default;
+$--color-primary-light-1: #1451cc !default;
+$--color-secondary-light-1: #cc3d3d !default;
+$--color-orange-light-1: #cc7a28 !default;
+$--color-green-light-1: #0e8f4e !default;
+$--color-gray-light-1: #333333 !default;
+
+// Font
+$--font-family-primary: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB,
+  Microsoft YaHei, Arial, sans-serif !default;
+$--font-weight-primary: 400 !default;
+$--font-weight-regular: 600 !default;
+$--font-size-extra-small: 12px !default;
+$--font-size-small: 13px !default;
+$--font-size-base: 14px !default;
+$--font-size-medium: 16px !default;
+$--font-size-large: 18px !default;
+$--font-size-huge-large: 20px !default;
+$--font-size-bulkiness-large: 24px !default;
+$--font-size-vast-large: 28px !default;
+$--font-size-grow-large: 32px !default;
+$--font-size-extra-large: 40px !default;
+
+// Line-height
+$--line-height-1: 20px !default;
+$--line-height-2: 22px !default;
+$--line-height-3: 24px !default;
+$--line-height-4: 26px !default;
+$--line-height-5: 28px !default;
+$--line-height-6: 32px !default;
+$--line-height-7: 36px !default;
+$--line-height-8: 40px !default;
+$--line-height-9: 48px !default;
+
+// Text
+$--text-color-primary: #292c33 !default;
+$--text-color-regular: #5c5f66 !default;
+$--text-color-secondary: #909399 !default;
+$--text-color-routine: #b5b8bd !default;
+$--text-color-white: #ffffff !default;
+$--text-color-placeholder: #c0c4cc !default;
+
+// Border
+$--border-height-base: 1px !default;
+$--border-color-base: #e8e9eb !default;
+$--border-color-hover: #f2f6fc !default;
+$--border-radius-small: 2px !default;
+$--border-radius-base: 4px !default;
+$--border-radius-medium: 6px !default;
+$--border-radius-large: 8px !default;
+$--border-radius-circle: 100% !default;
+
+// Box-shadow
+$--box-shadow-base: 0px 2px 8px 0px rgba(41, 44, 51, 0.1) !default;
+$--box-shadow-dark: 0px 4px 16px 0px rgba(41, 44, 51, 0.1) !default;
+$--box-shadow-light: 0px 8px 32px 0px rgba(41, 44, 51, 0.1) !default;
+$--box-shadow-secondary: 0px 16px 64px 0px rgba(41, 44, 51, 0.1) !default;
+
+// Transition
+$--all-transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1) !default;
+$--fade-transition: opacity 300ms cubic-bezier(0.23, 1, 0.32, 1) !default;
+$--fade-linear-transition: opacity 200ms linear !default;
+$--md-fade-transition: transform 300ms cubic-bezier(0.23, 1, 0.32, 1),
+  opacity 300ms cubic-bezier(0.23, 1, 0.32, 1) !default;
+$--border-transition-base: border-color 0.2s
+  cubic-bezier(0.645, 0.045, 0.355, 1) !default;
+$--color-transition-base: color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1) !default;
