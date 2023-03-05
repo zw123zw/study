@@ -1,0 +1,249 @@
+body {
+  display: flex;
+  flex-flow: column;
+  min-height: 100vh;
+  padding: 0;
+  margin: 0;
+  background-color: #f0f0f0;
+}
+
+.container {
+  flex: 1;
+  font-size: $size-font-primary;
+  color: $color-white;
+
+  .title {
+    color: $color-text-shallow-white;
+    background-color: $color-background-primary;
+  }
+
+  .button {
+    display: inline-block;
+    padding: 0.3em 0.8em;
+    margin-top: 10px;
+    border: 1px solid $color-border-primary;
+    background-color: $color-background-secondary;
+    border-radius: 0.2em;
+    cursor: pointer;
+  }
+
+  .border {
+    width: 600px;
+    height: 300px;
+    margin-top: 10px;
+    border: 10px solid hsla(0, 0%, 100%, 0.5);
+    background: url("../images/index-bg.jpg") no-repeat
+      $color-background-regular;
+    background-position: calc(100% - 100px) calc(100% - 100px);
+  }
+
+  * {
+    margin-bottom: 20px;
+  }
+
+  .liner,
+  .liner-grad,
+  .liner-grad1,
+  .liner-grad2,
+  .liner-grad3 {
+    width: 300px;
+    height: 100px;
+  }
+
+  .liner {
+    background: linear-gradient(#fb3, #58a);
+  }
+
+  .liner-grad {
+    background: linear-gradient(to right, #fb3, #58a);
+    background-size: 30px 100%;
+  }
+
+  .liner-grad1 {
+    background: linear-gradient(
+      45deg,
+      #fb3 25%,
+      #58a 0,
+      #58a 50%,
+      #fb3 0,
+      #fb3 75%,
+      #58a 0
+    );
+    background-size: 30px 30px;
+  }
+
+  .liner-grad2 {
+    background: $color-background-secondary;
+    background-image: linear-gradient(
+        90deg,
+        rgba(200, 0, 0, 0.5) 50%,
+        transparent 0
+      ),
+      linear-gradient(90deg, rgba(200, 0, 0, 0.5) 50%, transparent 0);
+    background-size: 30px 30px;
+  }
+
+  .liner-grad3 {
+    background: linear-gradient(45deg, #bbb 25%, transparent 0),
+      linear-gradient(45deg, transparent 75%, #bbb 0);
+    background-size: 30px 100%;
+  }
+
+  .liner-padding-box {
+    padding: 1em;
+    border: 1em solid transparent;
+    background: linear-gradient(white, white) padding-box,
+      repeating-linear-gradient(
+          -45deg,
+          red 0,
+          red 12.5%,
+          transparent 0,
+          transparent 25%,
+          #58a 0,
+          #58a 37.5%,
+          transparent 0,
+          transparent 50%
+        )
+        0 / 5em 5em;
+  }
+
+  .liner-padding-box1 {
+    padding: 1em;
+    border: 1em solid transparent;
+    background: linear-gradient(white, white) padding-box,
+      repeating-linear-gradient(-45deg, black 0, black 25%, #58a 0, white 50%) 0 /
+        5em 5em;
+    animation: ans 12s linear infinite;
+
+    @keyframes ans {
+      to {
+        background-position: 100%;
+      }
+    }
+  }
+
+  .liner-padding-box2 {
+    padding: 1em;
+    background: linear-gradient(-45deg, transparent 15px, #58a 0);
+  }
+
+  .liner-padding-box3 {
+    padding: 2em;
+    @include linear-corners(#58a, 15px, 15px);
+  }
+
+  .liner-padding-box4 {
+    padding: 2em;
+    @include radial-corners(#58a, 15px, 15px);
+  }
+
+  .liner-nav {
+    position: relative;
+    display: inline-block;
+    padding: 2em 4em;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      z-index: -1;
+      background: $color-background-gray;
+      background-image: linear-gradient(
+        hsla(0, 0%, 100%, 0.6),
+        hsla(0, 0%, 100%, 0)
+      );
+      border: 1ps solid rgba(0, 0, 0, 0.4);
+      border-bottom: none;
+      border-radius: 0.5em 0.5em 0 0;
+      box-shadow: 0 0.15em $color-white inset;
+      transform: perspective(0.5em) rotateX(5deg);
+      transform-origin: bottom;
+    }
+  }
+
+  .circle1 {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: $color-background-secondary;
+    overflow: hidden;
+
+    &::before {
+      content: "";
+      display: block;
+      height: 100%;
+      margin-left: 50%;
+      border-radius: 0 100% 0 / 50%;
+      background-color: black;
+      transform-origin: left;
+      transform: rotate(0.5turn);
+    }
+  }
+
+  .box-shadow1 {
+    width: 100px;
+    height: 100px;
+    background: $color-background-regular;
+    box-shadow: 5px 5px 4px -4px rgba(0, 0, 0, 0.5);
+  }
+
+  .filter-img {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    background: url(../images/index-bg.jpg) no-repeat center / cover;
+    filter: sepia(0) saturate(0) hue-rotate(295deg);
+  }
+
+  .box-input {
+    &:not(:focus) + .callout {
+      transform: scale(0);
+      transition-timing-function: ease;
+    }
+  }
+
+  .callout {
+    color: $color-text-red;
+    width: 100px;
+    height: 50px;
+    background: $color-background-regular;
+    transition: 0.5s cubic-bezier(0.26, 0.1, 0.3, 1.5);
+    transform-origin: top left;
+  }
+
+  .img-position {
+    width: 300px;
+    height: 300px;
+    background: url("../images/index-bg.jpg") no-repeat;
+    background-size: auto 100%;
+    transition: all 0.3s;
+    cursor: pointer;
+
+    &:hover {
+      background-position: 100% 0;
+    }
+  }
+}
+
+@for $item from 1 through 21 {
+  span:nth-of-type(#{$item}) {
+    animation-delay: #{(($item/10))}s !important;
+  }
+}
+
+.footer {
+  display: flex;
+  height: 150px;
+  background: $color-background-primary;
+
+  &-content {
+    width: 50px;
+    height: 50px;
+    margin: auto;
+    background: $color-background-regular;
+  }
+}
