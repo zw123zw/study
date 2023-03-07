@@ -1,11 +1,19 @@
 <template>
-  <div>首页</div>
+  <div>
+    <p>首页</p>
+    <test>
+      <template v-slot:header>header</template>
+      <template v-slot:default>default</template>
+      <template v-slot:footer>footer</template>
+    </test>
+  </div>
 </template>
 
 <script lang="ts" setup>
 import { ref, onMounted } from 'vue'
 import mitt from 'mitt'
 import type { Emitter } from 'mitt'
+import test from './test.tsx'
 
 type Events = {
   foo: string
