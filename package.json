@@ -42,7 +42,8 @@
     "vue-router": "^4.1.6",
     "vue-types": "^4.2.1",
     "xgplayer": "^2.32.2",
-    "@amap/amap-jsapi-loader": "^1.0.1"
+    "@amap/amap-jsapi-loader": "^1.0.1",
+    "cropperjs": "^1.5.12"
   },
   "devDependencies": {
     "@iconify-icons/ep": "^1.2.7",

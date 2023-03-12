@@ -9,7 +9,6 @@
     <div>{{ JSON.stringify(tableData) }}</div>
     <Markdown></Markdown>
     <div id="vs"></div>
-    <Amap />
   </div>
 </template>
 
@@ -20,7 +19,6 @@ import type { Emitter } from 'mitt'
 import test from './test'
 import Markdown from './markdown.vue'
 import Player from 'xgplayer'
-import Amap from './Amap.tsx'
 
 type Events = {
   foo: string
