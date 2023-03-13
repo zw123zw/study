@@ -9,6 +9,7 @@
     <div>{{ JSON.stringify(tableData) }}</div>
     <Markdown></Markdown>
     <div id="vs"></div>
+    <Cropper></Cropper>
   </div>
 </template>
 
@@ -19,6 +20,7 @@ import type { Emitter } from 'mitt'
 import test from './test'
 import Markdown from './markdown.vue'
 import Player from 'xgplayer'
+import Cropper from './cropper.tsx'
 
 type Events = {
   foo: string
