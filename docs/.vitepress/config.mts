@@ -18,6 +18,7 @@ export default defineConfig({
           { text: 'Markdown Examples', link: '/markdown-examples' },
           { text: 'Runtime API Examples', link: '/api-examples' },
           { text: 'Test', link: '/test' },
+          { text: 'Hello', link: '/hello' },
         ]
       }
     ],
@@ -27,6 +28,11 @@ export default defineConfig({
     ]
   },
   markdown: {
+    lineNumbers: true,
+    math: true,
+    image: {
+      lazyLoading: true
+    },
     container: {
       tipLabel: '提示',
       warningLabel: '警告',
