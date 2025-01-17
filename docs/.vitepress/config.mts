@@ -5,7 +5,6 @@ export default defineConfig({
   title: "My Awesome Project",
   description: "A VitePress Site",
   themeConfig: {
-    // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Examples', link: '/markdown-examples' }
@@ -25,7 +24,14 @@ export default defineConfig({
 
     socialLinks: [
       { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
-    ]
+    ],
+    footer: {
+      message: 'Released under the <a href="https://github.com/vuejs/vitepress/blob/main/LICENSE">MIT License</a>.',
+      copyright: 'Copyright © 2019-present <a href="https://github.com/yyx990803">Evan You</a>'
+    },
+    search: {
+      provider: 'local'
+    }
   },
   markdown: {
     lineNumbers: true,
@@ -39,6 +45,7 @@ export default defineConfig({
       dangerLabel: '危险',
       infoLabel: '信息',
       detailsLabel: '详细信息'
-    }
+    },
   },
+  lastUpdated: true
 })
