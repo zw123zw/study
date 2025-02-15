@@ -1,16 +1,24 @@
-target/
-!.mvn/wrapper/maven-wrapper.jar
-*.pid
+# Nuxt dev/build outputs
+.output
+.data
+.nuxt
+.nitro
+.cache
+dist
+
+# Node dependencies
+node_modules
+
+# Logs
+logs
 *.log
 
-### STS ###
-.apt_generated
-.classpath
-.factorypath
-.project
-.settings
-.springBeans
-.sts4-cache
+# Misc
+.DS_Store
+.fleet
+.idea
 
-### webpack ###
-node_modules/
+# Local env files
+.env
+.env.*
+!.env.example
