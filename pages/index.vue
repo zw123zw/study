@@ -5,7 +5,12 @@
     <h1 class="animate__animated animate__bounce animate__repeat-2">
       An animated element
     </h1>
-    <nuxt-link to="/test">test</nuxt-link>
+    <div>
+      <nuxt-link to="/test">test</nuxt-link>
+    </div>
+    <div>
+      <nuxt-link to="/test1">test1</nuxt-link>
+    </div>
   </div>
 </template>
 

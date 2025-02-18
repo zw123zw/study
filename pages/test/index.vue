@@ -3,6 +3,9 @@
     <div>test页面</div>
     <nuxt-link to="/">home</nuxt-link>
     <div @click="addTodo">addTodo</div>
+    Counter: {{ counter }}
+    <button @click="counter++">+</button>
+    <button @click="counter--">-</button>
   </div>
 </template>
 
@@ -21,14 +24,25 @@ async function addTodo() {
     },
   });
 }
-const { data: discounts, status } = await useAsyncData('cart-discount', async () => {
-  const [coupons, offers] = await Promise.all([
-    $fetch('/cart/coupons'),
-    $fetch('/cart/offers')
-  ])
-  return { coupons, offers }
-})
+const { data: discounts, status } = await useAsyncData(
+  "cart-discount",
+  async () => {
+    const [coupons, offers] = await Promise.all([
+      $fetch("/cart/coupons"),
+      $fetch("/cart/offers"),
+    ]);
+    return { coupons, offers };
+  }
+);
 console.log(discounts.value);
 console.log(status.value);
 
+const counter = useState("counter", () => Math.round(Math.random() * 1000));
+
+const websiteConfig = useState("config");
+await callOnce(async () => {
+  console.log('callOncecallOncecallOncecallOncecallOncecallOncecallOncecallOncecallOncecallOncecallOncecallOnce');
+  
+  websiteConfig.value = await $fetch("https://my-cms.com/api/website-config");
+});
 </script>
