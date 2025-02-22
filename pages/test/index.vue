@@ -14,7 +14,7 @@ const { data } = await useFetch("/api/data");
 console.log(data.value);
 
 const headers = useRequestHeaders(["cookie"]);
-console.log(headers.value);
+console.log(headers);
 
 async function addTodo() {
   const todo = await $fetch("/api/todos", {
