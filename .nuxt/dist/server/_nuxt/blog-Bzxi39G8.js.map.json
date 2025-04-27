@@ -1,1 +1,0 @@
-{"file":"blog-Bzxi39G8.js","mappings":";;;;;;;;;;;;;;;;;AAAA,QAAA,OAAAA,eAAA,MAAA,CAAA,GAAA;AAAA,QAAAC,mBAAA,qBAAA,MAAA,MAAA,OAAA,CAAA;;;;;;;;;;","names":["_ssrRenderAttrs","_ssrRenderComponent"],"sources":["../../../../layouts/blog.vue"],"sourcesContent":["<template>\r\n  <div>\r\n    <NuxtPage />\r\n    <div>我的博客导航栏在这里</div>\r\n  </div>\r\n</template>"],"version":3}
