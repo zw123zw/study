@@ -1,0 +1,1 @@
+import{u as e}from"./VAkEKpG1.js";import{y as t,c as o,o as n}from"./B4tCncyN.js";const l=t({__name:"[id]",setup(s){return e({title:"My App 动态路由",meta:[{name:"description",content:"My amazing site."}],bodyAttrs:{class:"test"},script:[{innerHTML:"console.log('Hello world')"}]}),(a,r)=>(n(),o("div",null,"动态路由"))}});export{l as default};
