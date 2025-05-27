@@ -1,15 +1,14 @@
 {
-  "name": "cheerio",
+  "name": "webpack",
   "version": "1.0.0",
   "main": "index.js",
   "repository": "https://github.com/zw123zw/study.git",
   "author": "张威 <wei.zhang@tophant.com>",
   "license": "MIT",
-  "type": "module",
   "scripts": {
-    "test": "node js/index.js"
+    "dev": "webpack"
   },
   "dependencies": {
-    "jsdom": "^26.1.0"
+    "webpack": "^5.99.9"
   }
 }
