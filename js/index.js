@@ -1,47 +1,32 @@
-import * as cheerio from "cheerio";
-import * as fs from "fs";
+import jsdom from "jsdom";
 
-// load
-const $ = cheerio.load(
-  `<div id="main"><h2 class="title">Hello world</h2><ul>
-    <li>Item 1</li>
-    <li>Item 2</li>
-  </ul></div>`
-);
-console.log($("h2.title").find(".subtitle").text());
-$("h2.title").text("Hello there!");
-console.log($("h2.title").text());
-$("h2").after("<h3>How are you?</h3>");
-console.log($("#main").html());
-console.log($("#main ul").find('li').length);
-console.log($("#main ul").contents());
-console.log($("#main ul").prop('tagName'));
-console.log($("h2.title").prop('innerText'));
-$("h2").append('<div id="test1">111111</div>')
-$("h1").insertAfter('h2 #test1')
-$("h2").prepend('<div>222222222</div>')
-console.log($("h2").html());
+const { JSDOM } = jsdom;
+const { window } = new JSDOM(`<!DOCTYPE html><p>Hello world</p>`);
+console.log(window.document.querySelector("p").textContent); // "Hello world"
 
-
-
-// loadBuffer
-const buffer = fs.readFileSync("./index.html");
-const $1 = cheerio.loadBuffer(buffer);
-console.log($1("body").html().trim());
-console.log($1("head").html().trim());
-console.log($1("meta[name]").attr("name"));
-console.log($1("meta[name]").attr("content"));
-console.log($1("meta[charset]").attr("charset"));
-console.log($1('[data-selected=true]').text());
-
-// 字符串流
-const writeStream = cheerio.stringStream({}, (err, $) => {
-  if (err) {
-  }
-  console.log($(".title").text());
+const dom = new JSDOM(``, {
+  url: "https://example.org/",
+  referrer: "https://example.com/",
+  contentType: "text/html",
+  includeNodeLocations: true,
+  storageQuota: 10000000,
 });
-fs.createReadStream("./index.html", { encoding: "utf8" }).pipe(writeStream);
 
-// 从 URL 获取
-const $2 = await cheerio.fromURL('https://example.com');
-console.log($2.html());
+const dom1 = new JSDOM(
+  `<body>
+  <div id="content"></div>
+  <script>document.getElementById("content").append(document.createElement("hr"));</script>
+</body>`,
+  { runScripts: "outside-only" }
+);
+
+// The script will not be executed, by default:
+console.log(dom1.window.document.getElementById("content").children.length); // 0
+dom1.window.eval('document.getElementById("content").append(document.createElement("p"));');
+console.log(dom1.window.document.getElementById("content").children.length); // 1
+console.log(dom1.window.document.getElementsByTagName("hr").length); // 0
+console.log(dom1.window.document.getElementsByTagName("p").length); // 1
+
+const frag = JSDOM.fragment(`<p>Hello</p><p><strong>Hi!</strong>`);
+frag.childNodes.length === 2;
+console.log(frag.firstChild.outerHTML); // logs "<p>Hello</p>"
