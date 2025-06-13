@@ -5,10 +5,23 @@
   "repository": "https://github.com/zw123zw/study.git",
   "author": "张威 <wei.zhang@tophant.com>",
   "license": "MIT",
+  "type": "module",
   "scripts": {
-    "dev": "webpack"
+    "build": "webpack --mode production"
   },
   "dependencies": {
     "webpack": "^5.99.9"
+  },
+  "devDependencies": {
+    "clean-webpack-plugin": "^4.0.0",
+    "css-loader": "^7.1.2",
+    "html-webpack-plugin": "^5.6.3",
+    "raw-loader": "^4.0.2",
+    "sass": "^1.89.0",
+    "sass-loader": "^16.0.5",
+    "style-loader": "^4.0.0",
+    "ts-loader": "^9.5.2",
+    "typescript": "^5.8.3",
+    "webpack-cli": "^6.0.1"
   }
 }
